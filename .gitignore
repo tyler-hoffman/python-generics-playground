@@ -1,0 +1,8 @@
+.mypy_cache/
+.venv/
+.env
+
+.vscode
+
+**/.ipynb_checkpoints/
+**/__pycache__/
