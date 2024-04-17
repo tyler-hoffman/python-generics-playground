@@ -6,7 +6,6 @@ from typing import Generic, TypeVar
 from typing_extensions import Self
 
 
-_TBatchDefinition = TypeVar("_TBatchDefinition", bound="BatchDefinition")
 
 
 # batch definitions
@@ -17,6 +16,7 @@ class BatchDefinition(ABC):
         return BatchRequest(batch_definition=self)
 
 
+
 @dataclass
 class SqlBatchDefinition(BatchDefinition):
     column_name: str
@@ -24,6 +24,8 @@ class SqlBatchDefinition(BatchDefinition):
 @dataclass
 class SparkBatchDefinition(BatchDefinition):
     batching_regex: str
+
+_TBatchDefinition = TypeVar("_TBatchDefinition", bound=BatchDefinition)
 
 
 # assets
